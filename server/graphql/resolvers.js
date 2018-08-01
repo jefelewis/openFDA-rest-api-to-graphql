@@ -1,85 +1,87 @@
-// Imports: Node Fetch
-const fetch = require('node-fetch');
+// Imports: Axios
+import axios from 'axios';
 
 // Imports: API Key
 
 
-
 // GraphQL: Resolvers
 const RESOLVERS = {
+
   Query: {
-    getMedicalDevice501KClearances: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/device/510k.json?`);
-      return response.json();
-    },
-    getMedicalDeviceClassification: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/device/classification.json?`);
-      return response.json();
-    },
-    getMedicalDeviceRecallEnforcementReports: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/device/enforcement.json?`);
-      return response.json();
-    },
-    getMedicalDeviceAdverseEventReports: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/device/event.json?`);
-      return response.json();
-    },
-    getMedicalDevicePremarketApproval: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/device/pma.json?`);
-      return response.json();
-    },
-    getMedicalDeviceRecalls: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/device/recall.json?`);
-      return response.json();
-    },
-    getMedicalDeviceRegistrationsAndListings: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/device/registrationlisting.json?`);
-      return response.json();
-    },
-    getMedicalDeviceUniqueDeviceIdentifier: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/device/udi.json?`);
-      return response.json();
-    },
-    getDrugRecallEnforcementReports: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/drug/enforcement.json?`);
-      return response.json();
-    },
-    getDrugAdverseEvents: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/drug/event.json?`);
-      return response.json();
-    },
-    getDrugProductLabeling: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/drug/label.json?`);
-      return response.json();
-    },
-    getFoodRecallEnforcementReports: async (parent, args) => {
-      const response = await
-      fetch(`https://api.fda.gov/food/enforcement.json?`);
-      return response.json();
-    },
-    getFoodCAERSReports: async (parent, args) => {
-      const response = await
-      fetch(``);
-      return response.json();
-    },
-    getOtherNSDE: async (parent, args) => {
-      const response = await
-      fetch(`api.fda.gov/other/nsde`);
-      return response.json();
-    }
+
+    // getMedicalDevice501KClearances: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/device/510k.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getMedicalDeviceClassification: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/device/enforcement.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getMedicalDeviceRecallEnforcementReports: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/device/enforcement.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getMedicalDeviceAdverseEventReports: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/device/event.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getMedicalDevicePremarketApproval: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/device/pma.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getMedicalDeviceRecalls: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/device/recall.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getMedicalDeviceRegistrationsAndListings: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/device/registrationlisting.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getMedicalDeviceUniqueDeviceIdentifier: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/device/udi.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getDrugRecallEnforcementReports: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/drug/enforcement.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getDrugAdverseEvents: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/drug/event.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getDrugProductLabeling: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/drug/label.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getFoodRecallEnforcementReports: (parent, args) => {
+    //   return axios.get(`https://api.fda.gov/food/enforcement.json?`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getFoodCAERSReports: (parent, args) => {
+    //   return axios.get(``)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // getOtherNSDE: (parent, args) => {
+    //   return axios.get(`api.fda.gov/other/nsde`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // }
   }
 };
+
 
 // Exports
 export default RESOLVERS;
